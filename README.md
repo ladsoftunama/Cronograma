@@ -10,4 +10,6 @@
 
 Este cronograma é dedicado aos participantes efetivos da Liga LADSOFT da UNAMA, que desejam aprimorar seus conhecimentos em Metodologia Ágil com ênfase na Prototipagem e no framework Next.js.
 
-Aproveite ao máximo essas sessões de estudo e prática para expandir seus conhecimentos em Metodologia Ágil com ênfase na Prototipagem e no framework Next.js. O cronograma agora inclui mais conteúdo, como estudos de caso, demonstrações de projetos anteriores, exercícios avançados e sessões de compartilhamento de projetos, tudo dentro do mesmo tempo total.
+## Nosso objetivo com as reuniões
+
+Aproveite ao máximo essas sessões de estudo e prática para expandir seus conhecimentos voltados a aprimorar as habilidades tecnicas em desenvolvimento objetivando elaborar em equipe soluções digitais para demandas internas e externass. O cronograma agora inclui mais conteúdo, como estudos de caso, demonstrações de projetos anteriores, exercícios avançados e sessões de compartilhamento de projetos, tudo dentro do mesmo tempo total.
