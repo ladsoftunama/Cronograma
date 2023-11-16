@@ -7,6 +7,7 @@
 - Acesso rapido ao cronograma
   - [Visão geral](/cronograma/README.md)
   - [Dia 1](/cronograma/dia_1/README.md)
+  - [Dia 2](/cronograma/dia_2/README.md)
 
 Este cronograma é dedicado aos participantes efetivos da Liga LADSOFT da UNAMA, que desejam aprimorar seus conhecimentos em Metodologia Ágil com ênfase na Prototipagem e no framework Next.js.
 
