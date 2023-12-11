@@ -9,7 +9,8 @@
   - [Desafios : Projeção de dados no mapa](/desafios//projecao%20de%20dados%20app%20rota%20da%20fe/README.md)
   - [Dia 1✅](/cronograma/dia_1/README.md)
   - [Dia 2✅](/cronograma/dia_2/README.md)
-  - [Dia 3](/cronograma/dia_3/README.md)
+  - [Dia 3✅](/cronograma/dia_3/README.md)
+  - [Dia 4✅](/cronograma/dia_4/README.md)
 
 Este cronograma é dedicado aos participantes efetivos da Liga LADSOFT da UNAMA, que desejam aprimorar seus conhecimentos em Metodologia Ágil com ênfase na Prototipagem e no framework Next.js.
 

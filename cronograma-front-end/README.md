@@ -21,6 +21,8 @@ Tem como objetivo este cronograma se obter conhecimentos basicos para se iniciar
   - usesatate()
   - userouter()
 
-### [Aula 2: Desenolvimento por componentização]()
+### [Aula 2: Conclusão da atividade proposta na aula 1](/cronograma-front-end/aula-2/README.md)
+
+- conclusão da atividade proposta na aula 1
 
 ### [Aula 3: Interatividade com JavaScript Básico]()

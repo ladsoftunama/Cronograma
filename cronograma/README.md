@@ -14,6 +14,8 @@ Tem como objetivo este cronograma se obter conhecimentos basicos para se iniciar
 
 ### [Dia 3 : Assuntos previstos ](/cronograma/dia_3)
 
+### [Dia 4 : Assuntos previstos ](/cronograma/dia_4)
+
 ### Assuntos previstos sujeitos a alteração
 
 **Duração: 2 horas**
