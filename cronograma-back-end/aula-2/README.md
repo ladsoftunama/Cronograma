@@ -1,14 +1,18 @@
 # Aula 2: conclusão da atividade proposta
 
-## Logica da api
+## Logica da api simples
 
-![img](/cronograma-back-end/arquivos/image_example.png)
+![img](/cronograma-back-end/aula-2/img-rep-back-des.png)
 
 ## Ambiente de Desenvolvimento
 
-### Endpoint: _getdata_
+### Endpoint: get-pokemons
 
-O codigo abaixo retrata o conceito de politicas de segurança a acesso de origem dos EndPoints
+Este código Node.js funciona como um controlador (handler) para uma API simples que fornece informações sobre pokémons e suas habilidades. Vamos dividir a explicação em seções:
+
+#### Cabeçalhos CORS(regras de acesso de segurança da rota):
+
+Configura os cabeçalhos CORS (Cross-Origin Resource Sharing) para permitir solicitações de qualquer origem (\*) e define os métodos permitidos.
 
 ```Javascript
 res.setHeader("Access-Control-Allow-Credentials", true);
@@ -23,41 +27,87 @@ res.setHeader("Access-Control-Allow-Credentials", true);
   );
 ```
 
-No codigo abaixo é realizado a conexão com banco de dados sql server em que ao ser instanciado é executado a query sql e como retorno temos a nossa resposta da api
+#### Lista de Pokémons e Habilidades(analogia ao armazenamento de dados):
+
+Cria um array chamado pokemonList, contendo objetos que representam diferentes pokémons e suas habilidades.
 
 ```Javascript
-const DatabaseConnection = require("./../../models/connection"); // Ajuste o caminho conforme necessário
+const pokemonList = [
+  { name: "Bulbasaur", abilities: ["Tackle", "Growl", "Leech Seed", "Vine Whip"] },
+  // ... Outros pokémons
+  { name: "Drowzee", abilities: ["Pound", "Hypnosis", "Disable"] },
+];
 
-export default async function handler(req, res) {
+```
+
+#### Envio da Resposta(disponibiliza como resposta ao endPoint):
+
+Retorna a lista de pokémons como resposta para a solicitação.
+
+```Javascript
+res.status(200).json({ data: pokemonList });
+```
+
+## Codigo completo
+
+[arquivo disponivel aqui](/cronograma-back-end/aula-2/arquivos/)
+
+```Javascript
+export default function handler(req, res) {
+  //===========================================================================
+  //                      CORS
+  //===========================================================================
   res.setHeader("Access-Control-Allow-Credentials", true);
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader(
     "Access-Control-Allow-Methods",
-    "GET,OPTIONS,PATCH,DELETE,POST,PUT"
+    "GET, OPTIONS, PATCH, DELETE, POST, PUT"
   );
   res.setHeader(
     "Access-Control-Allow-Headers",
     "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
   );
-  const db = new DatabaseConnection();
-  try {
-    // faz a conexão com db
-    await db.connect();
-    console.log("Connected to the database");
-    // query sql a ser executada
-    const sql = "SELECT * FROM post"; // query SQL atribuida a variavel
-    // retorno guardado na var 'results'
-    const results = await db.query(sql); // query SQL sendo executada
+  //===========================================================================
+  //                    Pokemons e suas habilidades
+  //===========================================================================
+  const pokemonList = [
+    {
+      name: "Bulbasaur",
+      abilities: ["Tackle", "Growl", "Leech Seed", "Vine Whip"],
+    },
+    { name: "Charmander", abilities: ["Scratch", "Growl", "Ember"] },
+    { name: "Squirtle", abilities: ["Tackle", "Tail Whip", "Bubble"] },
+    {
+      name: "Pikachu",
+      abilities: ["Thunder Shock", "Growl", "Quick Attack"],
+    },
+    { name: "Jigglypuff", abilities: ["Sing", "Defense Curl", "Pound"] },
+    { name: "Meowth", abilities: ["Scratch", "Growl", "Bite"] },
+    { name: "Psyduck", abilities: ["Scratch", "Tail Whip", "Water Gun"] },
+    { name: "Geodude", abilities: ["Tackle", "Defense Curl", "Rock Throw"] },
+    { name: "Machop", abilities: ["Low Kick", "Leer", "Karate Chop"] },
+    { name: "Tentacool", abilities: ["Poison Sting", "Supersonic", "Wrap"] },
+    { name: "Slowpoke", abilities: ["Confusion", "Disable", "Headbutt"] },
+    {
+      name: "Magnemite",
+      abilities: ["Tackle", "Sonic Boom", "Thunder Wave"],
+    },
+    { name: "Farfetch'd", abilities: ["Peck", "Sand Attack", "Leek Slash"] },
+    { name: "Doduo", abilities: ["Peck", "Growl", "Quick Attack"] },
+    { name: "Seel", abilities: ["Headbutt", "Growl", "Aurora Beam"] },
+    { name: "Grimer", abilities: ["Pound", "Disable", "Sludge"] },
+    { name: "Shellder", abilities: ["Tackle", "Withdraw", "Supersonic"] },
+    { name: "Gastly", abilities: ["Hypnosis", "Lick", "Spite"] },
+    { name: "Onix", abilities: ["Tackle", "Screech", "Rock Throw"] },
+    { name: "Drowzee", abilities: ["Pound", "Hypnosis", "Disable"] },
+  ];
+  //============================
+  // regras de negocio
+  //       . . .
+  //============================
 
-    console.log("Query results:", results); // em caso de sucesso ira print a mensagem results
-    // envio da resposta do sql no caso o envio da var 'result'
-    res.status(200).json({ data: results });
-  } catch (error) {
-    console.error("Error:", error); // caso falhe irar printar o erro
-    res.status(400).json({ data: "erro" + error });
-  } finally {
-    // Certifique-se de fechar a conexão quando terminar
-    await db.close(); // por fim ele encerra a conexão
-  }
+  //            Envio da mensagem
+  res.status(200).json({ data: pokemonList });
 }
+
 ```
