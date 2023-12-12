@@ -8,8 +8,9 @@
 
 - **Topicos gerais da liga**
 
-  - final de semestre
-  - liga academica em ferias
+  - Final de semestre
+  - Liga academica em ferias
+    - reuniões realizado para aprendizado no desenvolvimento .
     - atividades de ferias postados em github da liga
 
 - **Debates importantes**
